@@ -1,0 +1,36 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Albert_client_VB"
+        mc:Ignorable="d"
+        xmlns:Wpf="clr-namespace:Vlc.DotNet.Wpf;assembly=Vlc.DotNet.Wpf"
+        Title="Albert Client Application" Height="400" Width="650" Loaded="Window_Loaded">
+        
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <Wpf:VlcControl x:Name="myVlcControl" />
+
+        <Grid Grid.Row="0">
+            <Grid.Background>
+                <VisualBrush Stretch="Uniform">
+                    <VisualBrush.Visual>
+                        <Image Source="{Binding ElementName=myVlcControl, Path=VideoSource}" />
+                    </VisualBrush.Visual>
+                </VisualBrush >
+            </Grid.Background>
+            <TextBlock Name="textBlockOpen"  TextAlignment="Center" FontSize="18">Please, open a media file.</TextBlock>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Height="30" Orientation="Horizontal" VerticalAlignment="Bottom" >
+            <Button Width="60" Name="buttonRtsp" Click="buttonRtsp_Click"  >Open Rtsp</Button>
+            <TextBlock Margin="5,2" Name="textBlock"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

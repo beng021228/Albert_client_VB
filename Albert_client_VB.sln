@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Albert_client_VB", "Albert_client_VB\Albert_client_VB.vbproj", "{EC5DD7FE-F058-41B3-BD3F-0DA878AE7A8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC5DD7FE-F058-41B3-BD3F-0DA878AE7A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5DD7FE-F058-41B3-BD3F-0DA878AE7A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5DD7FE-F058-41B3-BD3F-0DA878AE7A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5DD7FE-F058-41B3-BD3F-0DA878AE7A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EBAF6E0-FC2B-4ED7-8D4A-D8DE1AE1F0E2}
+	EndGlobalSection
+EndGlobal

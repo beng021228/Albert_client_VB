@@ -1,0 +1,5 @@
+C:\Users\greye\source\repos\Albert_client_VB\Albert_client_VB\obj\Debug\Albert_client_VB.vbprojAssemblyReference.cache
+C:\Users\greye\source\repos\Albert_client_VB\Albert_client_VB\obj\Debug\MainWindow.g.vb
+C:\Users\greye\source\repos\Albert_client_VB\Albert_client_VB\obj\Debug\Application.g.vb
+C:\Users\greye\source\repos\Albert_client_VB\Albert_client_VB\obj\Debug\Albert_client_VB_MarkupCompile.cache
+C:\Users\greye\source\repos\Albert_client_VB\Albert_client_VB\obj\Debug\Albert_client_VB_MarkupCompile.lref
