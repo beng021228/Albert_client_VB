@@ -26,26 +26,41 @@
     End Sub
 
     Private Sub Dirfwd_Click(sender As Object, e As RoutedEventArgs) Handles dirfwd.Click
-        textblock_1.Text += vbCrLf & "fwd button clicked"
+        debug_textbox.Text += vbCrLf & "fwd button clicked"
     End Sub
-
-
-
 
 
     Private Sub Dirfwd_PreviewMouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs) Handles dirfwd.PreviewMouseLeftButtonDown
-        textblock_1.Text += vbCrLf & "driving forward"
+        debug_textbox.Text += vbCrLf & "driving forward"
     End Sub
 
     Private Sub Dirfwd_PreviewMouseLeftButtonUp(sender As Object, e As MouseButtonEventArgs) Handles dirfwd.PreviewMouseLeftButtonUp
-        textblock_1.Text += vbCrLf & "stopping"
+        debug_textbox.Text += vbCrLf & "stopping"
     End Sub
 
     Private Sub Dirleft_PreviewMouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs) Handles dirleft.PreviewMouseLeftButtonDown
-        textblock_1.Text += vbCrLf & "turning left"
+        debug_textbox.Text += vbCrLf & "turning left"
     End Sub
 
     Private Sub Dirleft_PreviewMouseLeftButtonUp(sender As Object, e As MouseButtonEventArgs) Handles dirleft.PreviewMouseLeftButtonUp
-        textblock_1.Text += vbCrLf & "stopping"
+        debug_textbox.Text += vbCrLf & "stopping"
+    End Sub
+
+
+
+    Private Sub Dirright_PreviewMouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs) Handles dirright.PreviewMouseLeftButtonDown
+        debug_textbox.Text += vbCrLf & "turning right"
+    End Sub
+
+    Private Sub Dirright_PreviewMouseLeftButtonUp(sender As Object, e As MouseButtonEventArgs) Handles dirright.PreviewMouseLeftButtonUp
+        debug_textbox.Text += vbCrLf & "stopping"
+    End Sub
+
+    Private Sub Dirbck_PreviewMouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs) Handles dirbck.PreviewMouseLeftButtonDown
+        debug_textbox.Text += vbCrLf & "going backward"
+    End Sub
+
+    Private Sub Dirbck_PreviewMouseLeftButtonUp(sender As Object, e As MouseButtonEventArgs) Handles dirbck.PreviewMouseLeftButtonUp
+        debug_textbox.Text += vbCrLf & "stopping"
     End Sub
 End Class

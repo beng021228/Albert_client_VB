@@ -157,5 +157,17 @@
   <ItemGroup>
     <Resource Include="direction_inactive_nomouse.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rot_inactive_nomouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rot_inactive_mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rot_active_nomouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rot_active_mouse.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

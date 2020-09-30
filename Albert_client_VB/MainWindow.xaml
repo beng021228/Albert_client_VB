@@ -84,6 +84,60 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="rot_button" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="rot_inactive_nomouse.png"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" Value="{x:Null}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="rot_inactive_mouse.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" Value="{x:Null}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="rot_active_nomouse.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" Value="{x:Null}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="rot_active_mouse.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" Value="{x:Null}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
 
@@ -103,16 +157,15 @@
                     </VisualBrush.Visual>
                 </VisualBrush >
             </Grid.Background>
-            <TextBlock Name="textBlockOpen"  TextAlignment="Center" FontSize="18" Foreground="#FF853434">Please, open a media file.</TextBlock>
+            <TextBlock x:Name="textBlockOpen"  TextAlignment="Center" FontSize="18" Foreground="#FF853434"><Run Text="Please, open a media file."/></TextBlock>
         </Grid>
 
         <StackPanel Grid.Row="1" Height="28.5" Orientation="Horizontal" VerticalAlignment="Bottom" >
             <Button Width="61" Name="buttonRtsp" Click="buttonRtsp_Click" Margin="0,8,0,0"  >Open Rtsp</Button>
             <TextBlock Margin="5,2" Name="textBlock"></TextBlock>
         </StackPanel>
-        <TextBlock x:Name="textblock_1" TextWrapping="Wrap" Text="Testing Information" Margin="0,70,10,10" Background="#FF78BBAF" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
-        <Button x:Name="dirleft" Content="" Margin="10,0,0,44.859" Style="{DynamicResource directional}" Height="39.36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="49.134"/>
-        <Button x:Name="dirbck" Content="" VerticalAlignment="Bottom" Margin="49.824,0,0,9.119" Style="{DynamicResource directional}" RenderTransformOrigin="0.5,0.5" Height="34.128" HorizontalAlignment="Left" Width="50.179">
+        <Button x:Name="dirleft" Content="" Margin="10,0,0,58" Style="{DynamicResource directional}" Height="39" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="49"/>
+        <Button x:Name="dirbck" Content="" VerticalAlignment="Bottom" Margin="50,0,0,22" Style="{DynamicResource directional}" RenderTransformOrigin="0.5,0.5" Height="34" HorizontalAlignment="Left" Width="50">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -122,7 +175,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="dirfwd" Content="" VerticalAlignment="Bottom" Margin="50.346,0,0,81.81" Style="{DynamicResource directional}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="49.135">
+        <Button x:Name="dirfwd" Content="" VerticalAlignment="Bottom" Margin="50,0,0,95" Style="{DynamicResource directional}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="49">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -132,7 +185,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="dirright" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="49.134" Margin="93.141,0,0,44.859" Style="{DynamicResource directional}" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="dirright" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="49" Margin="93,0,0,58" Style="{DynamicResource directional}" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -142,5 +195,37 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Button x:Name="pandown" Content="Button" Margin="0,0,73,26" VerticalAlignment="Bottom" Style="{DynamicResource rot_button}" Height="48" HorizontalAlignment="Right" Width="50"/>
+        <Button x:Name="panup" Content="Button" Margin="0,0,73,98" Style="{DynamicResource rot_button}" RenderTransformOrigin="0.5,0.5" Height="48" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="50">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180.407"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="panleft" Content="Button" HorizontalAlignment="Right" Margin="0,0,118,64" Width="50" Style="{DynamicResource rot_button}" RenderTransformOrigin="0.876,0.665" Height="48" VerticalAlignment="Bottom">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.373"/>
+                    <TranslateTransform X="-26.516" Y="10.964"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="panright" Content="Button" HorizontalAlignment="Right" Margin="0,0,27,64" Width="50" Style="{DynamicResource rot_button}" RenderTransformOrigin="0.5,0.5" Height="48" VerticalAlignment="Bottom">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270.173"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="debug_textbox" HorizontalAlignment="Left" Height="118" Margin="132,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="343" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Background="#FF5EDED3"/>
     </Grid>
 </Window>
