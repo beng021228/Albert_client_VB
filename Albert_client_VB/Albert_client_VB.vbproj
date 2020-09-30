@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Albert_client_VB</RootNamespace>
     <AssemblyName>Albert_client_VB</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -140,6 +141,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="direction_inactive_nomouse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="direction_active_mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="direction_inactive_mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="direction_active_nomouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="direction_inactive_nomouse.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
