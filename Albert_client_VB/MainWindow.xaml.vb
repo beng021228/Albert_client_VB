@@ -1,6 +1,10 @@
-﻿Class MainWindow
+﻿
+Imports Microsoft.Xna.Framework
+Imports Microsoft.Xna.Framework.Input
+Class MainWindow
 
     'Important!!!
+
 
 
     Private Sub buttonRtsp_Click(sender As Object, e As RoutedEventArgs)
@@ -10,7 +14,12 @@
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
 
+        ''AddHandler CompositionTarget.Rendering, AddressOf CompositionTarget_Rendering
 
+
+
+        Dim mygamepadstate As GamePadState = GamePad.GetState(PlayerIndex.One)
+        debug_textbox.Text = mygamepadstate.ThumbSticks.Left.ToString
 
     End Sub
 
@@ -62,5 +71,28 @@
 
     Private Sub Dirbck_PreviewMouseLeftButtonUp(sender As Object, e As MouseButtonEventArgs) Handles dirbck.PreviewMouseLeftButtonUp
         debug_textbox.Text += vbCrLf & "stopping"
+    End Sub
+
+    Protected Sub CompositionTarget_Rendering(sender As Object, e As EventArgs)
+
+
+
+        Dim mygamepadstate As GamePadState = GamePad.GetState(PlayerIndex.One)
+
+
+
+        debug_textbox.Text = mygamepadstate.ThumbSticks.Left.ToString
+        ''debug_textbox.Text += mygamepadstate.ThumbSticks.Right.X
+
+        ''myballs.Margin = New Thickness(mygamepadstate.ThumbSticks.Right.X, 0, 0, 0)
+
+
+
+
+
+    End Sub
+
+    Private Sub clearbutton_Click(sender As Object, e As RoutedEventArgs) Handles clearbutton.Click
+        debug_textbox.Text = ""
     End Sub
 End Class
